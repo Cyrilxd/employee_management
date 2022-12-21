@@ -39,12 +39,11 @@ def main():
     except: 
         print(permanenEmployeBernd.get_firstName(), permanenEmployeBernd.get_lastName(), 'Wageclass could not been updated as it reached its maximum: ', permanenEmployeBernd.get_wageClass())
     
-    permanenEmployeAnita._str_()
+    print(permanenEmployeAnita)
     print('----------------------------------------')
-    permanenEmployeBernd._str_()
+    print(permanenEmployeBernd)
     print('----------------------------------------')
-    hourlyWageEmployeClara._str_()
-
+    print(hourlyWageEmployeClara)
 
 
 

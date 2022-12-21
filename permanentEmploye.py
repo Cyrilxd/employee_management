@@ -45,9 +45,11 @@ class PermanentEmployee(Employe):
         salary = 48000 + wageClass * 7000 + wageLevel * 750
         return salary
 
-    def _str_(self):
-        self._str_()
-        print('Wageclass:', self.get_wageClass())
-        print('Wagelevel:', self.get_wageLevel())
-        print('Salary:', self.get_YearlySalary())
-  
+   # Display the object values
+    def __str__(self):
+        description = super(PermanentEmployee, self).__str__()
+        description += f"Child - permanent employee"
+        description += f"Wage Class: {self.get_wageClass()}\n" 
+        description += f"Wage Level: {self.get_wageLevel()}\n"    
+
+        return description

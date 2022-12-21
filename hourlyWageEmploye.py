@@ -22,9 +22,14 @@ class HourlywageEmploye(Employe):
     def set___hourlySalary(self, value):
         self.__hourlySalary = value
 
-    def _str_(self):
-        self._str_()
-        print('Hourlysalary:', self.get_hourlySalary())
+    # Display the object values
+    def __str__(self):
+        description = super(HourlywageEmploye, self).__str__()
+        description += f"Child - hourly wage employee:\n"
+        
+        description += f"Hourly Salary: {self.get_hourlySalary()}\n"  
+
+        return description
     
 
 

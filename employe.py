@@ -48,13 +48,22 @@ class Employe:
         return self.__personalid    
 
 
-    def _str_(self):
-        print('Lastname:', self.__lastName)
-        print('Firstname:', self.__firstName)    
-        print('PersonalId:', self.__personalid)    
-        print('Organization:', self.get_organization())    
-        print('Supervisor:', self.get_supervisor()) 
-    
+    # Display the object values
+    def __str__(self):
+        description = "Parent - Employee:\n"
+        description += f"Personal ID: {self.get_personalId()}\n"
+        description += f"Firstname: {self.get_firstName()}\n"
+        description += f"Lastname: {self.get_lastName()}\n"
+        
+        if self.get_organization() != None:
+            description += f"Organization: {self.get_organization()}\n"
+        if self.get_supervisor() != None:
+            description += f"Supervisor: {self.get_supervisor()}\n"
+
+        return description
+
+
+
 
 
 
