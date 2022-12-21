@@ -1,10 +1,51 @@
-from person import Person
+from employe import Employe
+from permanentEmploye import PermanentEmployee
+from hourlyWageEmploye import HourlywageEmploye
 
 def main():
-    person1 = Person('Bärbaum', 'Anita', 78100)
-    person1.set_organization('Sales')
-    person1.set_supervisor('')
-    person1.print()
+
+    #Create permanent Employe Object
+    #Lastname: Bärbaum, Firstname: Anita, Organization: Sales, PersonalId: 78100,  Wageclass: 20, Wagelevel: 20.
+    permanenEmployeAnita = PermanentEmployee('Bärbaum', 'Anita', '78100', 20, 20)
+    #set Organization
+    permanenEmployeAnita.set_organization('sales')
+
+
+    #Create permanent Employe Object
+    #Lastname: Christensen, Firstname: Bernd, Organization: Sales, PersonalId: 88335,  Wageclass: 15, Wagelevel: 10.
+    permanenEmployeBernd = PermanentEmployee('Christensen', 'Bernd', '88335', 15, 10)
+    #set Organization
+    permanenEmployeBernd.set_organization('sales')
+
+    #Create hourlywage employe Object
+    #Lastname: Dietbold, Firstname: Clara, Organization: Marketing, PersonalId: 91565, Hourlywage: 60
+    hourlyWageEmployeClara = HourlywageEmploye('Dietbold', 'Clara', '91565', 60)
+    #set Organization
+    hourlyWageEmployeClara.set_organization('Marketing')
+
+    permanenEmployeBernd.set_supervisor(permanenEmployeAnita.get_lastName() + ' ' + permanenEmployeAnita.get_firstName())
+
+    hourlyWageEmployeClara.set_organization('Sales')
+
+    hourlyWageEmployeClara.set_supervisor(permanenEmployeBernd.get_lastName() +' ' + permanenEmployeBernd.get_firstName())
+
+    try: 
+        permanenEmployeAnita.increaseWageLevel()
+    except: 
+        print(permanenEmployeAnita.get_firstName(), permanenEmployeAnita.get_lastName(), 'Wagelevel could not been updated as it reached its maximum: ', permanenEmployeAnita.get_wageLevel())
+
+    try: 
+        permanenEmployeBernd.increaseWageClass()
+    except: 
+        print(permanenEmployeBernd.get_firstName(), permanenEmployeBernd.get_lastName(), 'Wageclass could not been updated as it reached its maximum: ', permanenEmployeBernd.get_wageClass())
+    
+    permanenEmployeAnita._str_()
+    print('----------------------------------------')
+    permanenEmployeBernd._str_()
+    print('----------------------------------------')
+    hourlyWageEmployeClara._str_()
+
+
 
 
 if __name__ == "__main__":
@@ -14,61 +55,3 @@ if __name__ == "__main__":
 
     
 
-    
-"""
-
-class Employee(Person):
-
-    def __init__(self, wageClass, wageLevel):
-        Person.__init__(self, self.__name, self.__firstname, self.__personalid)
-        __supervisor = Person.get_supervisor(self)
-        __organization = Person.get_organization(self)
-        self.__wageClass = wageClass
-        self.__wageLevel = wageLevel
-
-    def get_wageClass(self):
-        return self.__wageClass
-
-    def get_wageLevel(self):
-        return self.__wageLevel   
-
-    def __increaseWageClass(wageClass):
-        if wageClass < 30:
-            wageClass = wageClass + 1
-        elif wageClass > 1:
-            wageClass = wageClass + 1
-        #is this correct?    
-        else:  print("Employe:", self.__fristname, self.__name, "has reached the limit of the available wage classes."  )
-
-        return wageClass
-
-    def __increaseWageLevel(wageLevel):
-        if wageLevel < 30:
-            wageLevel = wageLevel + 1
-        elif wageLevel > 1:
-            wageLevel = wageLevel + 1
-        #is this correct?    
-        else:  print("Employe:", self.__fristname, self.__name, "has reached the limit of the available wage levels."  )
-
-        return wageLevel
-
-    def __get_YearlySalary(self):
-        wageClass = self.get_wageLevel(self)
-        wageLevel = self.get_wageLevel(self)
-
-        salary = 48000 + wageClass * 7000 + wageLevel * 750
-        return salary
-
-
-class Hourlywage(Person):
-    def __init__(self):
-        Person.__init__(self, self.__name, self.__firstname, self.__personalid)
-      
-    def get_hourlyWage(self):
-        return self.__hourlyWage
-
-    def set_hourlyWage(self, value):
-        self.__hourlyWage
-
-
-        """
