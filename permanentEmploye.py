@@ -53,7 +53,7 @@ class PermanentEmployee(Employe):
    # Display the object values
     def __str__(self):
         description = super(PermanentEmployee, self).__str__()
-        description += f"Child - permanent employee"
+        description += f"Child - permanent employee\n"
         description += f"Wage Class: {self.get_wageClass()}\n" 
         description += f"Wage Level: {self.get_wageLevel()}\n"    
 
