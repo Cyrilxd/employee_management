@@ -35,8 +35,3 @@ class HourlywageEmploye(Employe):
 
         return description
     
-
-
-  
-
-        

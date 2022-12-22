@@ -39,7 +39,7 @@ class Employe:
         if not isinstance(value, str):
             raise ValueError(value, 'has the wrong type. The given type needs to be string.')        
         else:
-            self.__organization = value
+            self.__supervisor = value
             
     # get method for the lastName parameter 
     def get_lastName(self):
@@ -67,9 +67,3 @@ class Employe:
             description += f"Supervisor: {self.get_supervisor()}\n"
 
         return description
-
-
-
-
-
-
