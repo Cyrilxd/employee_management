@@ -25,16 +25,22 @@ class Employe:
 
     # set method for the organization parameter 
     def set_organization(self, value):
-        self.__organization = value
+        if not isinstance(value, str):
+            raise ValueError(value, 'has the wrong type. The given type needs to be string.')        
+        else:
+            self.__organization = value
 
     # get method for the supervisor parameter 
     def get_supervisor(self):
         return self.__supervisor
 
     # set method for the supervisor parameter 
-    def set_supervisor(self, value):
-        self.__supervisor = value   
-    
+    def set_supervisor(self, value): 
+        if not isinstance(value, str):
+            raise ValueError(value, 'has the wrong type. The given type needs to be string.')        
+        else:
+            self.__organization = value
+            
     # get method for the lastName parameter 
     def get_lastName(self):
         return self.__lastName

@@ -21,7 +21,10 @@ class HourlywageEmploye(Employe):
 
     # set method for the hourlySalary parameter 
     def set___hourlySalary(self, value):
-        self.__hourlySalary = value
+        if not isinstance(value, str):
+            raise ValueError(value, 'has the wrong type. The given type needs to be string.')        
+        else:
+            self.__hourlySalary = value
 
     # Display the object values
     def __str__(self):

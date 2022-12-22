@@ -13,7 +13,7 @@ class PermanentEmployee(Employe):
         if not isinstance(wageLevel, int):
             raise ValueError(wageLevel, 'has the wrong type. The given type needs to be int.')
         if wageLevel > 20 or wageLevel < 0:
-            raise ValueError('Wagelevel needs to be a number between 0 and 30.')   
+            raise ValueError('Wagelevel needs to be a number between 0 and 20.')   
 
         # Initialize Parent Compoenent
         super().__init__(lastName, firstName, personalid)
@@ -47,7 +47,7 @@ class PermanentEmployee(Employe):
         wageClass = self.get_wageLevel()
         wageLevel = self.get_wageLevel()
 
-        salary = 48000 + wageClass * 7000 + wageLevel * 750
+        salary = 48000 - 7750 + wageClass * 7000 + wageLevel * 750
         return salary
 
    # Display the object values
@@ -55,6 +55,7 @@ class PermanentEmployee(Employe):
         description = super(PermanentEmployee, self).__str__()
         description += f"Child - permanent employee\n"
         description += f"Wage Class: {self.get_wageClass()}\n" 
-        description += f"Wage Level: {self.get_wageLevel()}\n"    
+        description += f"Wage Level: {self.get_wageLevel()}\n"
+        description += f"Yearly Salary: {self.get_YearlySalary()}\n"    
 
         return description

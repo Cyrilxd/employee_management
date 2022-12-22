@@ -8,14 +8,14 @@ def main():
     # Lastname: Bärbaum, Firstname: Anita, Organization: Sales, PersonalId: 78100,  Wageclass: 20, Wagelevel: 20.
     permanenEmployeAnita = PermanentEmployee('Bärbaum', 'Anita', '78100', 20, 20)
     # set Organization
-    permanenEmployeAnita.set_organization('sales')
+    permanenEmployeAnita.set_organization('Sales')
 
 
     # Create permanent Employe Object
     # Lastname: Christensen, Firstname: Bernd, Organization: Sales, PersonalId: 88335,  Wageclass: 15, Wagelevel: 10.
     permanenEmployeBernd = PermanentEmployee('Christensen', 'Bernd', '88335', 15, 10)
     # set Organization
-    permanenEmployeBernd.set_organization('sales')
+    permanenEmployeBernd.set_organization('Sales')
 
     # Create hourlywage employe Object
     # Lastname: Dietbold, Firstname: Clara, Organization: Marketing, PersonalId: 91565, Hourlywage: 60
